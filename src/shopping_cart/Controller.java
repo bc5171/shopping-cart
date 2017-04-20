@@ -1,5 +1,6 @@
 package shopping_cart;
 
+import shopping_cart.Alerts;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -25,6 +26,13 @@ public class Controller implements Initializable {
         System.out.println("exiting");
         System.exit(0);
         Platform.exit();
+    }
+
+    @FXML
+    public void handleAboutAction(final ActionEvent event) {
+        Alerts alert = new Alerts();
+        System.out.println("handleAboutAction");
+        alert.aboutAlertMessage();
     }
 
     @FXML
