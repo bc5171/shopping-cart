@@ -146,7 +146,7 @@ public class Controller implements Initializable {
         System.out.println(cart.toString());
 
         if (!dc.addCart(cart.toString())) {
-            System.out.println("ERROR!");
+            System.out.println("\nERROR!");
         }
     }
 
