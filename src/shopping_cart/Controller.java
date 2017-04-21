@@ -1,5 +1,7 @@
 package shopping_cart;
 
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import shopping_cart.Alerts;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,14 +18,74 @@ import javafx.event.ActionEvent;
  */
 public class Controller implements Initializable {
 
+    @FXML CheckBox cbBeverage;
+    @FXML CheckBox cbDairy;
+    @FXML CheckBox cbBreadBakery;
+    @FXML CheckBox cbProduce;
+    @FXML CheckBox cbCannedJarredGoods;
+    @FXML CheckBox cbPersonalCare;
+    @FXML CheckBox cbCleaners;
+    @FXML CheckBox cbDryBakingGoods;
+    @FXML CheckBox cbMeat;
+    @FXML CheckBox cbPaperGoods;
+    @FXML CheckBox cbFrozenFoods;
+    @FXML CheckBox cbOther;
+    @FXML Label lblTotalCategories;
+
+
+
     @Override
-    public void initialize(URL location, ResourceBundle resources) { System.out.println("Loading user data..."); }
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Loading user data...");
+    }
 
     @FXML
     public void handleExitAction(final ActionEvent event) {
-        System.out.println("exiting");
+        System.out.println("Exiting...");
         System.exit(0);
         Platform.exit();
+    }
+
+    @FXML
+    public void handleCheckBox(final ActionEvent event) {
+        int totalCategories = 0;
+        if (cbBeverage.isSelected()) {
+            totalCategories += 1;
+        }
+        if (cbBreadBakery.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbCannedJarredGoods.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbCleaners.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbDairy.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbDryBakingGoods.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbFrozenFoods.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbMeat.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbOther.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbPaperGoods.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbPersonalCare.isSelected()){
+            totalCategories += 1;
+        }
+        if (cbProduce.isSelected()){
+            totalCategories += 1;
+        }
+        lblTotalCategories.setText(Integer.toString(totalCategories));
     }
 
     @FXML
