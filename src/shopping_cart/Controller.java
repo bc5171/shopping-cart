@@ -33,10 +33,10 @@ public class Controller implements Initializable {
     @FXML Label lblTotalCategories;
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Loading user data...");
+        lblTotalCategories.setText("0");
     }
 
     @FXML

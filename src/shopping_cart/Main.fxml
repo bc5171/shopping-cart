@@ -21,12 +21,9 @@
         <menus>
           <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
             <items>
+              <MenuItem fx:id="open" mnemonicParsing="false" text="Open" />
+              <MenuItem fx:id="save" mnemonicParsing="false" text="Save" />
               <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handleExitAction" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
           <Menu fx:id="menuHelp" mnemonicParsing="false" text="Help">
@@ -116,11 +113,23 @@
                        </GridPane>
                </content>
           </Tab>
-          <Tab text="Load File">
-          </Tab>
           <Tab text="Data Analysis">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
 
-          </Tab>
+                    </children>
+                  </GridPane>
+               </content></Tab>
         </tabs>
       </TabPane>
    </children>
