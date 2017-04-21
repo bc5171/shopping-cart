@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopping_cart.Controller">
    <children>
-      <MenuBar fx:id="menuBar" layoutY="2.0" onKeyPressed="#handleKeyInput" prefHeight="25.0" prefWidth="900.0">
+      <MenuBar fx:id="menuBar" layoutY="0.0" onKeyPressed="#handleKeyInput" prefHeight="25.0" prefWidth="900.0">
         <menus>
           <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handleExitAction" text="Close" />
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#handleExitAction" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -21,10 +27,66 @@
           </Menu>
           <Menu fx:id="menuHelp" mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem fx:id="about" text="About" onAction="#handleAboutAction"/>
+              <MenuItem fx:id="about" onAction="#handleAboutAction" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
+      <TabPane layoutX="0" layoutY="25.0" prefHeight="575.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Shopping Cart">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                         <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="30.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@resources/beverages.jpg" />
+                             </image>
+                         </ImageView>
+                        <Label layoutX="36.0" layoutY="83.0" text="Beverages" />
+                         <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="385.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@resources/bread.jpeg" />
+                             </image>
+                         </ImageView>
+                        <Label layoutX="380.0" layoutY="83.0" text="Bread/Bakery" />
+                         <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="210.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@resources/canned_goods.jpg" />
+                             </image>
+                         </ImageView>
+                        <Label layoutX="182.0" layoutY="215.0" text="Canned/Jarred Goods" />
+                         <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="210.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                             <image>
+                                 <Image url="@resources/dairy.jpg" />
+                             </image>
+                         </ImageView>
+                        <Label layoutX="226.0" layoutY="83.0" text="Dairy" />
+                        <Label layoutX="191.0" layoutY="341.0" text="Dry/Baking Goods" />
+                        <Label layoutX="204.0" layoutY="460.0" text="Frozen Foods" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="630.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/shopping_cart_image.png" />
+                           </image></ImageView>
+                        <Label layoutX="402.0" layoutY="341.0" text="Meat" />
+                        <Label layoutX="40.0" layoutY="215.0" text="Produce" />
+                        <Label layoutX="39.0" layoutY="341.0" text="Cleaners" />
+                        <Label layoutX="28.0" layoutY="460.0" text="Paper Goods" />
+                        <Label layoutX="380.0" layoutY="215.0" text="Personal Care" />
+                        <Label layoutX="400.0" layoutY="460.0" text="Other" />
+                     </children>
+              </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Load File">
+
+          </Tab>
+          <Tab text="Data Analysis">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </Pane>

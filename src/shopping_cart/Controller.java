@@ -17,9 +17,7 @@ import javafx.event.ActionEvent;
 public class Controller implements Initializable {
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Loading user data...");
-    }
+    public void initialize(URL location, ResourceBundle resources) { System.out.println("Loading user data..."); }
 
     @FXML
     public void handleExitAction(final ActionEvent event) {
@@ -30,9 +28,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void handleAboutAction(final ActionEvent event) {
-        Alerts alert = new Alerts();
-        System.out.println("handleAboutAction");
-        alert.aboutAlertMessage();
+        provideAboutFunctionality();
     }
 
     @FXML
@@ -49,7 +45,8 @@ public class Controller implements Initializable {
     }
 
     private void provideAboutFunctionality() {
-        System.out.println("You clicked on About!");
+        Alerts alert = new Alerts();
+        System.out.println("handleAboutAction");
+        alert.aboutAlertMessage();
     }
-
 }
