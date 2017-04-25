@@ -96,15 +96,13 @@ public class Controller implements Initializable {
     public void handleAddCartBtn(final ActionEvent event) {
         char[] cart = new char[23];
 
-        for(int x = 0; x < cart.length; x += 2) {
+        for(int x = 1; x < cart.length; x += 2) {
             cart[x] = ',';
         }
 
-        for (int x = 1; x < cart.length; x += 2) {
+        for (int x = 0; x < cart.length; x += 2) {
             cart[x] = 'f';
         }
-
-        System.out.println(cart.toString());
 
         if (cbBeverage.isSelected()) {
             cart[0] = 't';
@@ -143,9 +141,10 @@ public class Controller implements Initializable {
             cart[22] = 't';
         }
 
-        System.out.println(cart.toString());
+        String cartString = new String(cart);
+        System.out.println(cartString);
 
-        if (!dc.addCart(cart.toString())) {
+        if (!dc.addCart(cartString)) {
             System.out.println("\nERROR!");
         }
     }
