@@ -18,7 +18,7 @@ public class Weka {
         try {
             // Load the data
             BufferedReader reader = new BufferedReader(
-                    new FileReader("course-records.arff")
+                    new FileReader("grocery-store.arff")
             );
             Instances data = new Instances(reader);
             reader.close();
@@ -52,11 +52,18 @@ public class Weka {
         data.add("@relation grocery-store");
 
         // Next few lines are where we list our attributes
-        int x = 0;
-        for (String s : groceryStore) {
-            String t = "@attribute store" + x + " {t, f}";
-            data.add(t);
-        }
+        data.add("@attribute Beverage {t, f}");
+        data.add("@attribute BreadBakery {t, f}");
+        data.add("@attribute CannedJarredGoods {t, f}");
+        data.add("@attribute Cleaners {t, f}");
+        data.add("@attribute Dairy {t, f}");
+        data.add("@attribute DryBakingGoods {t, f}");
+        data.add("@attribute FrozenFoods {t, f}");
+        data.add("@attribute Meat {t, f}");
+        data.add("@attribute Other {t, f}");
+        data.add("@attribute PaperGoods {t, f}");
+        data.add("@attribute PersonalCare {t, f}");
+        data.add("@attribute Produce {t, f}");
 
         data.add("@data");
 
@@ -83,6 +90,7 @@ public class Weka {
             System.out.println("arffAlertMessage");
             alert.arffAlertMessage();
             ex.printStackTrace();
+            return false;
         }
 
         return true;
@@ -93,7 +101,7 @@ public class Weka {
         try {
             // Load the data
             BufferedReader reader = new BufferedReader(
-                    new FileReader("course-records.arff")
+                    new FileReader("grocery-store.arff")
             );
             Instances data = new Instances(reader);
             reader.close();

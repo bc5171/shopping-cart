@@ -1,7 +1,6 @@
 package shopping_cart;
 
-import org.omg.CORBA.SystemException;
-
+import shopping_cart.Weka;
 import java.util.ArrayList;
 
 /**
@@ -10,6 +9,7 @@ import java.util.ArrayList;
 public class DataController {
 
     ArrayList<String> groceryStore;
+
 
     DataController() {
         groceryStore = new ArrayList<>();
@@ -31,6 +31,11 @@ public class DataController {
         }
 
         return true;
+    }
+
+    public void analyzeStore () {
+        //Weka.createARFF(groceryStore);
+        System.out.println(Weka.getStatistics());
     }
 
 }

@@ -150,6 +150,9 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    public void handleWekaAnalysis(final ActionEvent event) { dc.analyzeStore();}
+
+    @FXML
     public void handleAboutAction(final ActionEvent event) {
         provideAboutFunctionality();
     }
