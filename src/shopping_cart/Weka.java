@@ -14,13 +14,108 @@ import weka.core.Instances;
  */
 public class Weka {
 
-    public boolean createARFF() {
+    public static String getStatistics() {
+        try {
+            // Load the data
+            BufferedReader reader = new BufferedReader(
+                    new FileReader("course-records.arff")
+            );
+            Instances data = new Instances(reader);
+            reader.close();
+            data.setClassIndex(data.numAttributes() - 1);
+
+            // Build associator
+            Apriori apriori = new Apriori();
+            apriori.setClassIndex(data.classIndex());
+            try {
+                apriori.buildAssociations(data);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            //System.out.println(apriori);
+            return (apriori.toString());
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static boolean createARFF(ArrayList<String> groceryStore) {
+
+        // Let's create an arraylist to store all of this crap in
+        ArrayList<String> data = new ArrayList<String>();
+
+        // First line is always the title of the arff file
+        data.add("@relation grocery-store");
+
+        // Next few lines are where we list our attributes
+        int x = 0;
+        for (String s : groceryStore) {
+            String t = "@attribute store" + x + " {t, f}";
+            data.add(t);
+        }
+
+        data.add("@data");
+
+        // Now let's build out our data
+        for (String s : groceryStore) {
+            data.add(s);
+        }
+
+
+        try {
+            // Specify the file path here
+            PrintWriter writer = new PrintWriter("grocery-store.arff", "UTF-8");
+
+            for (String s : data) {
+                writer.println(s);
+            }
+
+            writer.close();
+            System.out.println("\nARFF FILE SUCCESSFULLY CREATED\n");
+
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
         return true;
     }
 
-    public AssociationRules computeApriori() {
-        AssociationRules ar = null;
-        return ar;
+    public static AssociationRules computeApriori() {
+
+        try {
+            // Load the data
+            BufferedReader reader = new BufferedReader(
+                    new FileReader("course-records.arff")
+            );
+            Instances data = new Instances(reader);
+            reader.close();
+            data.setClassIndex(data.numAttributes() - 1);
+
+            // Build associator
+            Apriori apriori = new Apriori();
+            apriori.setClassIndex(data.classIndex());
+            try {
+                apriori.buildAssociations(data);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+            //System.out.println(apriori);
+            AssociationRules ar = apriori.getAssociationRules();
+            return ar;
+
+        } catch (IOException ex) {
+            // TODO add alert later
+            ex.printStackTrace();
+        }
+
+        return null;
+
     }
 
 }
