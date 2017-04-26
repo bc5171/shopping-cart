@@ -79,6 +79,9 @@ public class Weka {
 
         }
         catch (IOException ex) {
+            Alerts alert = new Alerts();
+            System.out.println("arffAlertMessage");
+            alert.arffAlertMessage();
             ex.printStackTrace();
         }
 

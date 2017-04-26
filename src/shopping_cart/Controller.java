@@ -45,7 +45,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void handleExitAction(final ActionEvent event) {
-        System.out.println("Exiting...");
+        System.out.println("EXITING...");
         System.exit(0);
         Platform.exit();
     }

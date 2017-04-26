@@ -18,4 +18,12 @@ public class Alerts {
         alert.showAndWait();
     }
 
+    public void arffAlertMessage () {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("ARFF Error!");
+        alert.setHeaderText("Shopping Cart Application");
+        alert.setContentText("An error has occured with creating the .arff file.");
+        alert.showAndWait();
+    }
+
 }

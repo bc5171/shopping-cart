@@ -106,7 +106,7 @@
                                <CheckBox fx:id="cbPaperGoods" mnemonicParsing="false" onAction="#handleCheckBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
                                <CheckBox fx:id="cbFrozenFoods" mnemonicParsing="false" onAction="#handleCheckBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                                <CheckBox fx:id="cbOther" mnemonicParsing="false" onAction="#handleCheckBox" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-                               <Button fx:id="btnAddCart" mnemonicParsing="false" text="Add Cart!" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" onAction="#handleAddCartBtn" />
+                               <Button fx:id="btnAddCart" mnemonicParsing="false" onAction="#handleAddCartBtn" text="Add Cart!" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
                                <Label fx:id="lblTotalCategories" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                                <Label text="Total Categories" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
                            </children>
@@ -125,9 +125,9 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
-                    <children>
-
-                    </children>
+                     <children>
+                        <Button mnemonicParsing="false" text="Analyze Grocery Store" />
+                     </children>
                   </GridPane>
                </content></Tab>
         </tabs>
