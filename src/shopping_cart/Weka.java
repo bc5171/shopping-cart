@@ -110,6 +110,7 @@ public class Weka {
             return ar;
 
         } catch (IOException ex) {
+            // TODO add alert later
             ex.printStackTrace();
         }
 
