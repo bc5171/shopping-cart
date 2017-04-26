@@ -1,6 +1,5 @@
 package shopping_cart;
 
-import shopping_cart.Weka;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +33,7 @@ public class DataController {
     }
 
     public void analyzeStore () {
-        //Weka.createARFF(groceryStore);
+        Weka.createARFF(groceryStore);
         System.out.println(Weka.getStatistics());
     }
 

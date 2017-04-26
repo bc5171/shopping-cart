@@ -50,6 +50,7 @@ public class Weka {
 
         // First line is always the title of the arff file
         data.add("@relation grocery-store");
+        //
 
         // Next few lines are where we list our attributes
         data.add("@attribute Beverage {t, f}");
