@@ -13,6 +13,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.event.ActionEvent;
 
+import javax.swing.*;
+
 /**
  * Created by Ben on 4/19/2017.
  */
@@ -32,10 +34,12 @@ public class Controller implements Initializable {
     @FXML CheckBox cbOther;
     @FXML Label lblTotalCategories;
 
+    DataController dc;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Loading user data...");
+        System.out.println("\nLOADING USER DATA\n");
+        dc = new DataController();
         lblTotalCategories.setText("0");
     }
 
@@ -86,6 +90,63 @@ public class Controller implements Initializable {
             totalCategories += 1;
         }
         lblTotalCategories.setText(Integer.toString(totalCategories));
+    }
+
+    @FXML
+    public void handleAddCartBtn(final ActionEvent event) {
+        char[] cart = new char[23];
+
+        for(int x = 1; x < cart.length; x += 2) {
+            cart[x] = ',';
+        }
+
+        for (int x = 0; x < cart.length; x += 2) {
+            cart[x] = 'f';
+        }
+
+        if (cbBeverage.isSelected()) {
+            cart[0] = 't';
+        }
+        if (cbBreadBakery.isSelected()){
+            cart[2] = 't';
+        }
+        if (cbCannedJarredGoods.isSelected()){
+            cart[4] = 't';
+        }
+        if (cbCleaners.isSelected()){
+            cart[6] = 't';
+        }
+        if (cbDairy.isSelected()){
+            cart[8] = 't';
+        }
+        if (cbDryBakingGoods.isSelected()){
+            cart[10] = 't';
+        }
+        if (cbFrozenFoods.isSelected()){
+            cart[12] = 't';
+        }
+        if (cbMeat.isSelected()){
+            cart[14] = 't';
+        }
+        if (cbOther.isSelected()){
+            cart[16] = 't';
+        }
+        if (cbPaperGoods.isSelected()){
+            cart[18] = 't';
+        }
+        if (cbPersonalCare.isSelected()){
+            cart[20] = 't';
+        }
+        if (cbProduce.isSelected()){
+            cart[22] = 't';
+        }
+
+        String cartString = new String(cart);
+        System.out.println(cartString);
+
+        if (!dc.addCart(cartString)) {
+            System.out.println("\nERROR!");
+        }
     }
 
     @FXML
