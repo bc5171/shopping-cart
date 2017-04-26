@@ -18,7 +18,7 @@ public class Weka {
         try {
             // Load the data
             BufferedReader reader = new BufferedReader(
-                    new FileReader("grocery-store.arff")
+                    new FileReader("working-grocery-store.arff")
             );
             Instances data = new Instances(reader);
             reader.close();
@@ -76,7 +76,7 @@ public class Weka {
 
         try {
             // Specify the file path here
-            PrintWriter writer = new PrintWriter("grocery-store.arff", "UTF-8");
+            PrintWriter writer = new PrintWriter("working-grocery-store.arff", "UTF-8");
 
             for (String s : data) {
                 writer.println(s);
@@ -102,7 +102,7 @@ public class Weka {
         try {
             // Load the data
             BufferedReader reader = new BufferedReader(
-                    new FileReader("grocery-store.arff")
+                    new FileReader("working-grocery-store.arff")
             );
             Instances data = new Instances(reader);
             reader.close();

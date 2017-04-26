@@ -32,9 +32,10 @@ public class DataController {
         return true;
     }
 
-    public void analyzeStore () {
-        Weka.createARFF(groceryStore);
-        System.out.println(Weka.getStatistics());
+    public String analyzeStore () {
+        //Weka.createARFF(groceryStore);
+        String results = Weka.getStatistics();
+        return results;
     }
 
 }

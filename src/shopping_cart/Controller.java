@@ -2,6 +2,8 @@ package shopping_cart;
 
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import shopping_cart.Alerts;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +35,8 @@ public class Controller implements Initializable {
     @FXML CheckBox cbFrozenFoods;
     @FXML CheckBox cbOther;
     @FXML Label lblTotalCategories;
+    @FXML ListView listViewAssociationRules;
+    @FXML TextArea analysisTextArea;
 
     DataController dc;
 
@@ -150,7 +154,9 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void handleWekaAnalysis(final ActionEvent event) { dc.analyzeStore();}
+    public void handleWekaAnalysis(final ActionEvent event) {
+        analysisTextArea.setText(dc.analyzeStore());
+    }
 
     @FXML
     public void handleAboutAction(final ActionEvent event) {
