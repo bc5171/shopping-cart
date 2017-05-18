@@ -37,6 +37,7 @@ public class Controller implements Initializable {
     @FXML CheckBox cbFrozenFoods;
     @FXML CheckBox cbOther;
     @FXML Label lblTotalCategories;
+    @FXML Label lblTotalShoppingCarts;
     @FXML ListView<String> listViewAssociationRules;
     @FXML TextArea analysisTextArea;
 
@@ -47,6 +48,7 @@ public class Controller implements Initializable {
         System.out.println("\nLOADING USER DATA\n");
         dc = new DataController();
         lblTotalCategories.setText("0");
+        lblTotalShoppingCarts.setText("0");
     }
 
     @FXML
@@ -153,6 +155,8 @@ public class Controller implements Initializable {
         if (!dc.addCart(cartString)) {
             System.out.println("\nERROR!");
         }
+
+        lblTotalShoppingCarts.setText(Integer.toString(dc.returnTotalCarts()));
     }
 
     @FXML

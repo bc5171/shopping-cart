@@ -57,6 +57,13 @@
                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
+                               <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.halignment="CENTER">
+                                   <image>
+                                       <Image url="@resources/grocery_store.jpg" />
+                                   </image>
+                               </ImageView>
+                               <Label text="Total Carts" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.columnIndex="4" GridPane.valignment="CENTER" />
+                               <Label text="Beverages" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                    <image>
                                        <Image url="@resources/beverages.jpg" />
@@ -148,6 +155,7 @@
                                <CheckBox fx:id="cbOther" mnemonicParsing="false" onAction="#handleCheckBox" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                                <Button fx:id="btnAddCart" mnemonicParsing="false" onAction="#handleAddCartBtn" text="Add Cart!" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                                <Label fx:id="lblTotalCategories" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                               <Label fx:id="lblTotalShoppingCarts" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                                <Label text="Total Categories" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
                            </children>
                        </GridPane>

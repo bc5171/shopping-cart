@@ -13,10 +13,12 @@ import java.util.ArrayList;
 public class DataController {
 
     ArrayList<String> groceryStore;
+    int totalShoppingCarts;
 
 
     DataController() {
         groceryStore = new ArrayList<>();
+        totalShoppingCarts = 0;
     }
 
     public boolean saveGroceryStore(String cart) {
@@ -34,6 +36,7 @@ public class DataController {
             return false;
         }
 
+        totalShoppingCarts++;
         return true;
     }
 
@@ -93,6 +96,10 @@ public class DataController {
 
 
         return data;
+    }
+
+    public Integer returnTotalCarts() {
+        return totalShoppingCarts;
     }
 
 }
